@@ -118,6 +118,61 @@ int main(void) {
     printf("| c. 結束            |\n");
     printf("----------------------\n");
     while (getchar() != '\n');
+    if (in == 'c' || in == 'C') {
+        printf("Continue? (y/n) ");
+        char y;
+        scanf(" %c", &y);                 
+    
+        if (y == 'y' || y == 'Y') {
+    
+            int n;                       
+            while (1) {
+                printf("\n請輸入 1 ~ 9 的整數：");
+                if (scanf("%d", &n) != 1) {
+                    while (getchar() != '\n');
+                    printf("輸入錯誤\n");
+                    continue;
+                }
+                if (n >= 1 && n <= 9) {
+                    while (getchar() != '\n');  
+                    break;
+                } else {
+                    printf("輸入錯誤\n");
+                }
+            }
+    
+            for (int i = 1; i <= n; i++) {
+                for (int j = 1; j <= n; j++)
+                    printf("%d×%d=%2d ", i, j, i * j);
+                printf("\n");
+            }
+    
+            printf("\n按任意鍵返回主選單...\n");
+            while (getchar() != '\n');     
+            getchar();
+            system("cls");
+        }
+    
+        system("cls");
+        printf("----------------------\n");
+        printf("| a. 畫出直角三角形  |\n");
+        printf("| b. 顯示乘法表      |\n");
+        printf("| c. 結束            |\n");
+        printf("----------------------\n");
+    
+        if (y == 'n' || y == 'N') {
+            return 0;           
+        } else if (y!='y' && y!='Y' && y!='n' && y!='N') {  
+            printf("\n輸入錯誤，請重新輸入\n");
+            scanf(" %c", &y);
+        }
+    }
     system("pause");
     return 0;
 }
+
+
+//這次實驗運用到很多for、while迴圈與if判斷式
+//雖然寫起來不難，但花了很多時間再調適程式碼，不是括弧錯亂，就是分號沒有打，面對多行程式需要的耐心與毅力是簡單的程式最不同的
+//這次學到要先清除緩衝區，以免電腦讀入值錯亂，導致程式執行失敗
+//這次作業也學到電腦系統中或要安裝相關套件或程式，要按y或n的實際程式是如何而來
