@@ -25,11 +25,11 @@ int main(void) {
         "                 \\ | /\n"
         "                  \\|/     \n"
     );
-    printf("\n程式設計作業一\n");
+    printf("\n程式設計作業二\n");
     printf("UE3B52\n");
     printf("411102252\n");
     printf("沈威宇\n");
-    printf("請輸入四位數密碼:\n");
+    printf("請輸入四位數密碼:");
     int pw = 2025, input,i;       //密碼預設2025
     scanf("%d", &input);
     if (input != pw) {
@@ -42,4 +42,15 @@ int main(void) {
         system("pause");
         return 1;
     }
+    system("cls"); //清除螢幕
+    printf("----------------------\n");
+    printf("| a. 畫出直角三角形  |\n");
+    printf("| b. 顯示乘法表      |\n");
+    printf("| c. 結束            |\n");
+    printf("----------------------");
+    system("pause");
+    return 0;
+
+
+
 }
