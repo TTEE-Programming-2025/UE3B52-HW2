@@ -53,44 +53,71 @@ int main(void) {
     scanf(" %c",&in);
     if(in=='a'||in=='A'){
         system("cls");
-    }
-    char inn;
-    int r;
-    while (1) {
-        printf("\n請輸入一個 a~n 的字元: ");
-        scanf(" %c", &inn);        
+        char inn;
+        int r;
+        while (1) {
+            printf("\n請輸入一個 a~n 的字元: ");
+            scanf(" %c", &inn);        
 
-        if (inn >= 'a' && inn <= 'n') {         
-            for (r = 0; r<= inn - 'a'; r++) {
-                char start = inn - r;
-                for (char ch = start; ch <= inn; ch++)
-                    printf("%c", ch);
-                printf("\n");
+            if (inn >= 'a' && inn <= 'n') {         
+                for (r = 0; r<= inn - 'a'; r++) {
+                    char start = inn - r;
+                    for (char ch = start; ch <= inn; ch++)
+                        printf("%c", ch);
+                    printf("\n");
+                }
+                break;                               
+            } 
+            else {                               
+                printf("\n輸入範圍錯誤，請重新輸入\n");
             }
-            break;                               
-        } 
-        else {                               
-            printf("\n輸入範圍錯誤，請重新輸入\n");
         }
+        printf("\n按任意鍵返回主選單...\n");
+        system("pause");
+        getchar();        
+        system("cls");
     }
-    printf("\n按任意鍵返回主選單...\n");
-    system("pause");
-    getchar( );        
-    system("cls");
+    system("cls"); //清除螢幕
+    printf("----------------------\n");
+    printf("| a. 畫出直角三角形  |\n");
+    printf("| b. 顯示乘法表      |\n");
+    printf("| c. 結束            |\n");
+    printf("----------------------");
+    if(in=='b'||in=='B'){
+        int n;
+        while (1) {
+            printf("\n請輸入 1 ~ 9 的整數：");
+            if (scanf("%d", &n) != 1) {
+                while (getchar() != '\n'); //清理緩衝區
+                printf("輸入錯誤\n");
+                continue;
+            }
+            if (n >= 1 && n <= 9) {
+                break; 
+                while (getchar() != '\n');                  
+            }
+            else {
+                printf("輸入錯誤\n");
+            }
+        }          
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                printf("%d×%d=%2d ", i, j, i * j);
+            }
+            printf("\n");                   
+        }
+        printf("\n按任意鍵返回主選單...\n");
+        while (getchar() != '\n');
+        getchar( );                          
+        system("cls");               
+    }
+    system("cls"); //清除螢幕
     printf("----------------------\n");
     printf("| a. 畫出直角三角形  |\n");
     printf("| b. 顯示乘法表      |\n");
     printf("| c. 結束            |\n");
     printf("----------------------\n");
-
-
-
-
-    
+    while (getchar() != '\n');
     system("pause");
     return 0;
-
-
-
-
 }
